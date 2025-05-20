@@ -15,6 +15,7 @@
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      $link_gambar = input($_POST['link_gambar']);
       $judul       = input($_POST['judul']);
       $tahun       = input($_POST['tahun']);
       $penerbit    = input($_POST['penerbit']);
@@ -26,6 +27,10 @@
       else echo "<p>Data Gagal Disimpan.</p>";
     }
   ?>
+  <p>
+    <label>link gambar</label><br>
+    <input type="text" name="link_gambar" placeholder="Input link gambar">
+  </p>
 
   <p>
     <label>Judul</label><br>
