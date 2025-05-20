@@ -21,8 +21,8 @@
       $penerbit    = input($_POST['penerbit']);
       $isi         = input($_POST['isi']);
 
-      $sql = "INSERT INTO buku (judul, tahun, penerbit, isi) VALUES 
-              ('$judul', '$tahun', '$penerbit', '$isi')";
+      $sql = "INSERT INTO buku (link_gambar,judul, tahun, penerbit, isi) VALUES 
+              ('$link_gambar','$judul', '$tahun', '$penerbit', '$isi')";
       if (mysqli_query($koneksi, $sql)) header("Location: dashboard.php");
       else echo "<p>Data Gagal Disimpan.</p>";
     }
