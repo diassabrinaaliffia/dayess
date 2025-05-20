@@ -16,12 +16,15 @@ if (!$data) {
 }
 
 if (isset($_POST['submit'])) {
+  
+    $link_gambar = htmlspecialchars($_POST['link_gambar']);  
     $judul = htmlspecialchars($_POST['judul']);
     $tahun = htmlspecialchars($_POST['tahun']);
     $penerbit = htmlspecialchars($_POST['penerbit']);
     $isi = htmlspecialchars($_POST['isi']);
 
     $update = "UPDATE buku SET  
+        link_gambar='$link_gambar',
         judul='$judul', 
         tahun='$tahun', 
         penerbit='$penerbit', 
@@ -52,6 +55,10 @@ if (isset($_POST['submit'])) {
 <hr>
 
 <form method="POST">
+    <p>
+    <label>link gambar:</label><br>
+    <input type="text" name="link_gambar" value="<?= $data['link_gambar'] ?>">
+  </p>
   <p>
     <label>Judul:</label><br>
     <input type="text" name="judul" value="<?= $data['judul'] ?>">
